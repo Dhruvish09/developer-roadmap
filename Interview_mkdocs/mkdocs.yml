@@ -1,5 +1,5 @@
 site_name: Python Developer Roadmap
-site_url: https://github.com/Dhruvish09
+site_url: https://github.com/Dhruvish09/developer-roadmap
 site_description: Comprehensive documentation for My Project.
 site_author: Dhruvish Patel
 copyright: Copyright &copy; 2024 - 2027 Dhruvish Patel
@@ -185,7 +185,7 @@ plugins:
 #       type: git
 #   - mkdocs-minify-plugin
 
-repo_url: https://github.com/Dhruvish09/PYTHON_TUT
+repo_url: https://github.com/Dhruvish09/developer-roadmap
 repo_name: GitHub
 edit_uri: edit/main/docs/
 use_directory_urls: true
@@ -214,7 +214,7 @@ extra:
       link: https://twitter.com/yourprofile
       name: Twitter
     - icon: fontawesome/brands/github
-      link: https://github.com/yourprofile
+      link: https://github.com/Dhruvish09
       name: Github
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/yourprofile
