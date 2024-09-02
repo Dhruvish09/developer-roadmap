@@ -1,0 +1,228 @@
+site_name: Python Developer Roadmap
+site_url: https://github.com/Dhruvish09
+site_description: Comprehensive documentation for My Project.
+site_author: Dhruvish Patel
+copyright: Copyright &copy; 2024 - 2027 Dhruvish Patel
+
+theme:
+  name: material
+  logo: assets/images/Python_logo.png
+  favicon: assets/images/3447021-removebg-preview.png
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+    # toggle:
+    #   icon: material/toggle-switch-off-outline
+    #   name: Switch between dark and light mode
+  font:
+    text: "Roboto"
+    code: "Fira Code"
+  icon:
+    logo: material/puzzle-edit-outline
+    # edit: material/pencil 
+    # view: material/eye
+
+  repo: fontawesome/brands/github
+  custom_dir: docs/overrides
+
+  # icon:
+  #   previous: fontawesome/solid/angle-left
+  #   next: fontawesome/solid/angle-right
+  # logo:
+  #   text: "Python Roadmap"
+  #   image: 'images/logo.png'  # Path to the header logo image
+  # favicon: 'images/logo1.png'
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - toc.integrate
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tooltips
+    - navigation.indexes
+    - search.share
+    # - content.action.edit
+    # - navigation.footer
+    # - header.autohide
+  language: en
+
+# theme:
+#   name: material
+#   # features:
+#   #   - navigation.tabs
+#   #   - navigation.sections  # This enables collapsible sections
+#   palette:
+#     primary: 'deep purple'
+#     accent: 'amber'
+#   font:
+#     text: 'Roboto'
+#     code: 'Roboto Mono'
+
+# theme:
+#   name: material
+#   palette:
+#     primary: 'blue'
+#     accent: 'light blue'
+#   font:
+#     text: 'Open Sans'
+#     code: 'Fira Mono'
+  # logo: 'images/logo.png'
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - tables
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.critic
+  - pymdownx.inlinehilite
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.tasklist
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+
+# markdown_extensions:
+#   - toc:
+#       permalink: true
+#   - tables
+#   - admonition
+#   - codehilite:
+#       guess_lang: false
+#   - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - OOPS:
+    - INHERITANCE:
+      - Hybrid_Inheritance: OOPS/INHERITANCE/Hybrid_Inheritance.md
+      - Multilevel_Inheritance: OOPS/INHERITANCE/Multilevel_Inheritance.md
+      - Multiple_Inheritance: OOPS/INHERITANCE/Multilple_Inheritance.md
+      - Single_Inheritance: OOPS/INHERITANCE/Single_Inheritance.md
+    - Abstraction: OOPS/Abstraction.md
+    - Constructor: OOPS/Constructor.md
+    - Encapsulation: OOPS/Encapsulation.md
+  - Database:
+    - MongoDB: Database/mongodb.md
+    - SQL: Database/sql.md
+  - ORM:
+    - Django: ORM/django.md
+    - Flask: ORM/flask.md
+  - Practical:
+    - Data_type:
+      - List: Practical/Data_type/list.md
+      - Dictionary: Practical/Data_type/dict.md
+      - String: Practical/Data_type/string.md
+    - Python: Practical/Most_ask_python_practical.md
+    - Sql: Practical/Most_ask_sql_practical.md
+  - Framework:
+    - Django_Framework: Framework/Django_Framework.md
+    - Flask_Framework: Framework/Flask_Framework.md
+    - Fastapi_Framework: Framework/Fastapi_Framework.md
+
+  - Devops:
+    # - AWS: Framework/Django_Framework.md
+    - Docker: Devops/Docker.md
+    # - Fastapi_Framework: Framework/Fastapi_Framework.md
+
+
+plugins:
+  - offline
+  - search
+  - glightbox
+  - minify:
+      minify_html: true
+  - redirects
+  - git-revision-date-localized:
+      type: timeago
+      fallback_to_build_date: true
+
+  # - mkdocs-git-revision-date-localized:
+  #     type: git
+  # - mkdocs-minify-plugin
+
+
+# plugins:
+#   - search
+#   - mkdocs-git-revision-date-localized:
+#       type: git
+#   - mkdocs-minify-plugin
+
+repo_url: https://github.com/Dhruvish09/PYTHON_TUT
+repo_name: GitHub
+edit_uri: edit/main/docs/
+use_directory_urls: true
+
+# extra_css:
+#   - assets/css/custom.css
+
+# extra_javascript:
+#   - assets/js/custom.js
+
+extra:
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+    cookies:
+      analytics: Google Font
+    actions:
+      - accept
+      - manage 
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/yourprofile
+      name: Twitter
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourprofile
+      name: Github
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/yourprofile
+      name: Linkedin
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:pateldhruvish612000@gmail.com
+      name: Mail Me
+  homepage: /
+  # scope: /
+
+  # generator: false
