@@ -32,7 +32,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
     5. Access Your Site:
     Your site will be available at https://<username>.github.io/<repository>/.
-    Ex: https://dhruvish09.github.io/PYTHON_TUT/
+    Ex: https://dhruvish09.github.io/developer-roadmap/
 
 ## Header
 
