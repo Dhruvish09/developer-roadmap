@@ -3,7 +3,10 @@ name: 🚀 Deploy MkDocs to GitHub Pages
 on:
   push:
     branches:
-      - main  # or the branch you deploy from
+      - main
+
+permissions:
+  contents: write  # Required to push to gh-pages branch
 
 jobs:
   deploy:
@@ -34,7 +37,7 @@ jobs:
       - name: 🚀 Deploy MkDocs to GitHub Pages
         working-directory: Interview_mkdocs
         env:
-          GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}  # You must define this secret in your GitHub repo
+          GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
           mkdocs gh-deploy --force
