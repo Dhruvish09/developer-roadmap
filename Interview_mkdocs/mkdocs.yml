@@ -142,7 +142,7 @@ nav:
   - Database:
     - Redis: Database/redis.md
     - SQL:
-      - Overview: Database/SQL/sql.md
+      - Joins: Database/SQL/joins.md
       - Advanced SQL: Database/SQL/advanced_sql_topics.md
       - Indexing: Database/SQL/indexing.md
       - Normalization: Database/SQL/normalization.md
@@ -152,18 +152,42 @@ nav:
   - ORM:
     - Django: ORM/django.md
     - Flask: ORM/flask.md
-  - Practical:
-    - Data_type:
-      - List: Practical/Data_type/list.md
-      - Dictionary: Practical/Data_type/dict.md
-      - String: Practical/Data_type/string.md
-    - Python: Practical/Most_ask_python_practical.md
-    - Sql: Practical/Most_ask_sql_practical.md
+  - Interview:
+    - Practical:
+      - Data_type:
+        - List:
+          - Methods: Interview/Practical/Data_type/List/methods.md
+          - Practical: Interview/Practical/Data_type/List/list_practical.md
+        - String:
+          - Methods: Interview/Practical/Data_type/String/methods.md
+          - Practical: Interview/Practical/Data_type/String/string_practical.md
+        - Dictionary:
+          - Methods: Interview/Practical/Data_type/Dict/methods.md
+      - SQL:
+          - Commands: Interview/Practical/SQL/commands.md
+          - practical: Interview/Practical/SQL/sql_practical.md
+          - oral: Interview/Practical/SQL/sql_questions.md
+    - ORAL_QA:
+          - Python: Interview/Oral_Q_A.md/python.md
+          - Sql: Interview/Oral_Q_A.md/sql.md
   - Framework:
     - Django_Framework: Framework/Django_Framework.md
     - Flask_Framework: Framework/Flask_Framework.md
     - Fastapi_Framework: Framework/Fastapi_Framework.md
 
+  - AI/ML :
+    - Overview: AI_ML/overview.md
+    - Langraph:
+      - Overview: AI_ML/Langraph/overview.md
+      - Agents: AI_ML/Langraph/Agents.md
+      - Chains: AI_ML/Langraph/Chains.md
+      - Memory: AI_ML/Langraph/Memory.md
+      - Prompting: AI_ML/Langraph/Prompting.md
+      - Tools: AI_ML/Langraph/Tools.md
+      - Vectorstores: AI_ML/Langraph/Vectorstores.md
+      - LLMs: AI_ML/Langraph/LLMs.md
+      - Document Loaders: AI_ML/Langraph/Document_Loaders.md
+      - Evaluation: AI_ML/Langraph/Evaluation.md
   - Devops:
     - Docker:
       - Docker: Devops/Docker/docker.md
@@ -184,6 +208,8 @@ nav:
     - Security: System Design/Security.md
     - Testing: System Design/Testing.md
 
+  - Communication:
+    - Manager Round: Communication/Manger_Round.md
 
 plugins:
   - offline
