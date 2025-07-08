@@ -1,0 +1,40 @@
+name: 🚀 Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # or the branch you deploy from
+
+jobs:
+  deploy:
+    name: 📄 Build & Deploy Docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Install Python Dependencies
+        working-directory: Interview_mkdocs
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install mkdocs-glightbox
+
+      - name: 🔐 Configure Git User
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: 🚀 Deploy MkDocs to GitHub Pages
+        working-directory: Interview_mkdocs
+        env:
+          GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}  # You must define this secret in your GitHub repo
+        run: |
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
+          mkdocs gh-deploy --force
