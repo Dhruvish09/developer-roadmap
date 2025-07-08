@@ -140,8 +140,15 @@ nav:
     - Constructor: OOPS/Constructor.md
     - Encapsulation: OOPS/Encapsulation.md
   - Database:
-    - MongoDB: Database/mongodb.md
-    - SQL: Database/sql.md
+    - Redis: Database/redis.md
+    - SQL:
+      - Overview: Database/SQL/sql.md
+      - Advanced SQL: Database/SQL/advanced_sql_topics.md
+      - Indexing: Database/SQL/indexing.md
+      - Normalization: Database/SQL/normalization.md
+      - Query Optimization: Database/SQL/query_optimization.md
+      - Sharding: Database/SQL/sharding.md
+      - Store Procedure: Database/SQL/store_procedure.md
   - ORM:
     - Django: ORM/django.md
     - Flask: ORM/flask.md
@@ -158,9 +165,24 @@ nav:
     - Fastapi_Framework: Framework/Fastapi_Framework.md
 
   - Devops:
-    # - AWS: Framework/Django_Framework.md
-    - Docker: Devops/Docker.md
-    # - Fastapi_Framework: Framework/Fastapi_Framework.md
+    - Docker:
+      - Docker: Devops/Docker/docker.md
+      - Docker Compose: Devops/Docker/docker_compose.md
+    - AWS:
+      - Overview: Devops/AWS/overview.md
+    - Metrices: Devops/monitoring_observability.md
+
+  - Roadmap:
+    - Python:
+      - Python Developer: Roadmap/Python/developer_roadmap.md
+
+  - System Design:
+    - System Design Overview: System Design/overview.md
+    - Asynchronous Processing: System Design/Asynchronous_ Processing_Queues.md
+    - Content Extraction: System Design/Content_Extraction.md
+    - Notifications: System Design/Notifications_Messaging.md
+    - Security: System Design/Security.md
+    - Testing: System Design/Testing.md
 
 
 plugins:

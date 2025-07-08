@@ -1,8 +1,17 @@
 # Use an official Python runtime as a parent image
 FROM python:3.9-slim
 
+# Set environment variables to avoid prompts during install
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Set the working directory in the container
 WORKDIR /docs
+
+# Install git (required for mkdocs-git-revision-date-localized-plugin)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Copy the current directory contents into the container at /docs
 COPY . /docs

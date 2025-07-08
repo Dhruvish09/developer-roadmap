@@ -56,3 +56,4 @@ tomli==2.0.1
 urllib3==2.2.2
 watchdog==5.0.0
 wcmatch==9.0
+mkdocs-glightbox
