@@ -34,6 +34,7 @@
 
 * **OpenAI / Anthropic / Gemini APIs**: API design, limitations, pricing, streaming
 * **LangChain**: Agents, tools, memory, chaining, prompt templates
+* **LangGraph**: Node-based LLM workflow orchestration, conditional flow, persistent agent state
 * **Pinecone**: Vector database usage, upserts, similarity search, namespace handling
 
 ### 🔹 **Web Crawling & Content Extraction**
