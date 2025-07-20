@@ -210,7 +210,10 @@ nav:
       - Overview: System Design/overview.md
       - System Design Guide: 
           - System Design Process: System Design/System Design Guide/System Design Process.md
+          - Request-Response: System Design/System Design Guide/Request-Response.md            
+          - 30-Concepts-Cover-Project: System Design/System Design Guide/30_Concept_Cover_Project.md
           - E-Commerce: System Design/System Design Guide/E-Commerce.md
+
       - Core Concepts: 
           - Client-Server Model: System Design/Core Concepts/Client-Server Model.md
           - Stateless_Stateful: System Design/Core Concepts/Stateless_Stateful.md
@@ -284,6 +287,7 @@ nav:
           - Transport Security: System Design/Security/Transport Security.md
           - Common Threats: System Design/Security/Common Threats.md
           - DDoS Protection: System Design/Security/DDoS Protection.md
+          - Pre-SignedURL: System Design/Security/Pre-SignedUrl.md
 
       - System Performance: 
           - API Profiling_Benchmarking: System Design/System Performance & Optimization/API Profiling_Benchmarking.md

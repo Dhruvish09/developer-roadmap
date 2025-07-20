@@ -1,0 +1,1 @@
+![Client_Server](../../assets/images/system_design/client_server.png)
