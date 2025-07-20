@@ -1,6 +1,6 @@
 site_name: Python Developer Roadmap
 site_url: https://github.com/Dhruvish09/developer-roadmap
-site_description: Comprehensive documentation for My Project.
+site_description: A comprehensive guide and roadmap for mastering Python, system design, DevOps, and interviews.
 site_author: Dhruvish Patel
 copyright: Copyright &copy; 2024 - 2027 Dhruvish Patel
 
@@ -10,30 +10,30 @@ theme:
   favicon: assets/images/3447021-removebg-preview.png
   palette:
     # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
+    # - media: "(prefers-color-scheme)"
+    #   toggle:
+    #     icon: material/brightness-auto
+    #     name: Auto theme
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default 
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
+        name: Dark mode
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
         icon: material/brightness-4
-        name: Switch to system preference
+        name: Light mode 
     # toggle:
     #   icon: material/toggle-switch-off-outline
     #   name: Switch between dark and light mode
   font:
-    text: "Roboto"
-    code: "Fira Code"
+    text: Roboto
+    code: Fira Code
   icon:
     logo: material/puzzle-edit-outline
     # edit: material/pencil 
@@ -141,9 +141,11 @@ nav:
     - Lambda & Functional: Python/Lambda_Functional_Programming.md
     - Memory Management: Python/Memory_Management.md
     - Parallel Programming: Python/Parallel_Programming.md
+    - MetaProgramming: Python/MetaProgramming.md
   - Database:
     - Redis: Database/redis.md
     - SQL:
+      - Commands: Database/SQL/commands.md
       - Joins: Database/SQL/joins.md
       - Advanced SQL: Database/SQL/advanced_sql_topics.md
       - Indexing: Database/SQL/indexing.md
@@ -172,6 +174,7 @@ nav:
     - ORAL_QA:
           - Python: Interview/Oral_Q_A.md/python.md
           - Sql: Interview/Oral_Q_A.md/sql.md
+    - Problem Solve: Interview/problem_solve.md
   - Framework:
     - Django_Framework: Framework/Django_Framework.md
     - Flask_Framework: Framework/Flask_Framework.md
@@ -205,6 +208,9 @@ nav:
 
   - System Design:
       - Overview: System Design/overview.md
+      - System Design Guide: 
+          - System Design Process: System Design/System Design Guide/System Design Process.md
+          - E-Commerce: System Design/System Design Guide/E-Commerce.md
       - Core Concepts: 
           - Client-Server Model: System Design/Core Concepts/Client-Server Model.md
           - Stateless_Stateful: System Design/Core Concepts/Stateless_Stateful.md
@@ -341,18 +347,18 @@ extra:
       - accept
       - manage 
   social:
-    - icon: fontawesome/brands/twitter
-      link: https://x.com/dhruvish09
-      name: Twitter
     - icon: fontawesome/brands/github
       link: https://github.com/Dhruvish09
-      name: Github
+      name: GitHub
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/dhruvish09/
-      name: Linkedin
+      name: LinkedIn
     - icon: fontawesome/solid/paper-plane
       link: mailto:pateldhruvish612000@gmail.com
       name: Mail Me
+    - icon: fontawesome/brands/twitter
+      link: https://x.com/dhruvish09
+      name: Twitter
   homepage: https://dhruvish09.github.io/developer-roadmap/index.html
   # scope: /
 
