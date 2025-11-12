@@ -1,0 +1,211 @@
+<svg viewBox="0 0 1000 1400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define gradients and styles -->
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="agentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="toolGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="outputGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666"/>
+    </marker>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#667eea"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="1400" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <rect x="50" y="20" width="900" height="60" rx="10" fill="url(#headerGrad)" filter="url(#shadow)"/>
+  <text x="500" y="60" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">LangGraph Complete Workflow</text>
+  
+  <!-- USER INPUT -->
+  <rect x="400" y="110" width="200" height="50" rx="25" fill="#667eea" filter="url(#shadow)"/>
+  <text x="500" y="142" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">User Query</text>
+  
+  <!-- Arrow down -->
+  <path d="M 500 160 L 500 190" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- PHASE 1: DATA INGESTION -->
+  <rect x="100" y="200" width="800" height="240" rx="15" fill="white" stroke="url(#dataGrad)" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="100" y="200" width="800" height="45" rx="15" fill="url(#dataGrad)"/>
+  <text x="500" y="230" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">PHASE 1: Data Ingestion and Vector Storage</text>
+  
+  <!-- Data flow boxes -->
+  <g transform="translate(150, 270)">
+    <rect x="0" y="0" width="140" height="60" rx="8" fill="#fff" stroke="#f093fb" stroke-width="2"/>
+    <text x="70" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#f093fb" text-anchor="middle">Load Docs</text>
+    <text x="70" y="45" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">PDFs, URLs, CSV</text>
+  </g>
+  
+  <path d="M 290 300 L 330 300" stroke="#f093fb" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(330, 270)">
+    <rect x="0" y="0" width="140" height="60" rx="8" fill="#fff" stroke="#f093fb" stroke-width="2"/>
+    <text x="70" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#f093fb" text-anchor="middle">Split Text</text>
+    <text x="70" y="45" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Chunk documents</text>
+  </g>
+  
+  <path d="M 470 300 L 510 300" stroke="#f093fb" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(510, 270)">
+    <rect x="0" y="0" width="140" height="60" rx="8" fill="#fff" stroke="#f093fb" stroke-width="2"/>
+    <text x="70" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#f093fb" text-anchor="middle">Embed</text>
+    <text x="70" y="45" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Convert to vectors</text>
+  </g>
+  
+  <path d="M 650 300 L 690 300" stroke="#f093fb" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(690, 270)">
+    <rect x="0" y="0" width="140" height="60" rx="8" fill="#fff" stroke="#f093fb" stroke-width="2"/>
+    <text x="70" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#f093fb" text-anchor="middle">Store</text>
+    <text x="70" y="45" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">FAISS/Pinecone</text>
+  </g>
+  
+  <text x="500" y="370" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">Documents ready for retrieval</text>
+  
+  <!-- Arrow to Phase 2 -->
+  <path d="M 500 440 L 500 470" stroke="#667eea" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- PHASE 2: MULTI-AGENT EXECUTION -->
+  <rect x="100" y="480" width="800" height="450" rx="15" fill="white" stroke="url(#agentGrad)" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="100" y="480" width="800" height="45" rx="15" fill="url(#agentGrad)"/>
+  <text x="500" y="510" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">PHASE 2: Multi-Agent Graph Execution</text>
+  
+  <!-- Shared Memory Box -->
+  <rect x="350" y="545" width="300" height="60" rx="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="500" y="565" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2196f3" text-anchor="middle">Shared Memory</text>
+  <text x="500" y="585" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Context, History, State</text>
+  
+  <!-- Research Agent -->
+  <g transform="translate(180, 640)">
+    <rect x="0" y="0" width="180" height="90" rx="10" fill="#fff" stroke="#4facfe" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4facfe" text-anchor="middle">Research Agent</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Search vectorstore</text>
+    <text x="90" y="60" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Query APIs</text>
+    <text x="90" y="75" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Gather facts</text>
+  </g>
+  
+  <path d="M 360 685 L 410 685" stroke="#4facfe" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Summarizer Agent -->
+  <g transform="translate(410, 640)">
+    <rect x="0" y="0" width="180" height="90" rx="10" fill="#fff" stroke="#4facfe" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4facfe" text-anchor="middle">Summarizer Agent</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Synthesize findings</text>
+    <text x="90" y="60" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Create structure</text>
+    <text x="90" y="75" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Format output</text>
+  </g>
+  
+  <path d="M 590 685 L 640 685" stroke="#4facfe" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Evaluator Agent -->
+  <g transform="translate(640, 640)">
+    <rect x="0" y="0" width="180" height="90" rx="10" fill="#fff" stroke="#4facfe" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4facfe" text-anchor="middle">Evaluator Agent</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Check quality</text>
+    <text x="90" y="60" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Score results</text>
+    <text x="90" y="75" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Validate output</text>
+  </g>
+  
+  <!-- Bidirectional memory connections -->
+  <path d="M 270 605 L 270 640" stroke="#2196f3" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+  <path d="M 500 605 L 500 640" stroke="#2196f3" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+  <path d="M 730 605 L 730 640" stroke="#2196f3" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+  
+  <!-- Tools Section -->
+  <rect x="150" y="760" width="700" height="130" rx="10" fill="#e8f5e9" stroke="#43e97b" stroke-width="2"/>
+  <text x="500" y="785" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#43e97b" text-anchor="middle">Available Tools (Called Dynamically)</text>
+  
+  <g transform="translate(180, 805)">
+    <rect x="0" y="0" width="130" height="50" rx="5" fill="#fff" stroke="#43e97b" stroke-width="1.5"/>
+    <text x="65" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#43e97b" text-anchor="middle">Web Search</text>
+    <text x="65" y="37" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">SearchAPI</text>
+  </g>
+  
+  <g transform="translate(330, 805)">
+    <rect x="0" y="0" width="130" height="50" rx="5" fill="#fff" stroke="#43e97b" stroke-width="1.5"/>
+    <text x="65" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#43e97b" text-anchor="middle">Calculator</text>
+    <text x="65" y="37" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">Python Tool</text>
+  </g>
+  
+  <g transform="translate(480, 805)">
+    <rect x="0" y="0" width="130" height="50" rx="5" fill="#fff" stroke="#43e97b" stroke-width="1.5"/>
+    <text x="65" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#43e97b" text-anchor="middle">Vectorstore</text>
+    <text x="65" y="37" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">Lookup</text>
+  </g>
+  
+  <g transform="translate(630, 805)">
+    <rect x="0" y="0" width="130" height="50" rx="5" fill="#fff" stroke="#43e97b" stroke-width="1.5"/>
+    <text x="65" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#43e97b" text-anchor="middle">Custom APIs</text>
+    <text x="65" y="37" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">Integrations</text>
+  </g>
+  
+  <text x="500" y="905" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Different LLMs can power each agent (GPT-4, Claude, etc.)</text>
+  
+  <!-- Arrow to Phase 3 -->
+  <path d="M 500 930 L 500 960" stroke="#667eea" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- PHASE 3: OUTPUT -->
+  <rect x="100" y="970" width="800" height="180" rx="15" fill="white" stroke="url(#outputGrad)" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="100" y="970" width="800" height="45" rx="15" fill="url(#outputGrad)"/>
+  <text x="500" y="1000" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">PHASE 3: Evaluation and Delivery</text>
+  
+  <g transform="translate(200, 1040)">
+    <rect x="0" y="0" width="180" height="70" rx="8" fill="#fff" stroke="#fa709a" stroke-width="2"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fa709a" text-anchor="middle">Final Answer</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Refined summary</text>
+    <text x="90" y="60" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">with citations</text>
+  </g>
+  
+  <g transform="translate(410, 1040)">
+    <rect x="0" y="0" width="180" height="70" rx="8" fill="#fff" stroke="#fa709a" stroke-width="2"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fa709a" text-anchor="middle">Quality Scores</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Confidence levels</text>
+    <text x="90" y="60" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">and evaluations</text>
+  </g>
+  
+  <g transform="translate(620, 1040)">
+    <rect x="0" y="0" width="180" height="70" rx="8" fill="#fff" stroke="#fa709a" stroke-width="2"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fa709a" text-anchor="middle">Trace Log</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Workflow path</text>
+    <text x="90" y="60" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">and agent decisions</text>
+  </g>
+  
+  <!-- Arrow to user -->
+  <path d="M 500 1150 L 500 1180" stroke="#667eea" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- USER OUTPUT -->
+  <rect x="350" y="1190" width="300" height="70" rx="35" fill="#667eea" filter="url(#shadow)"/>
+  <text x="500" y="1220" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">User Receives</text>
+  <text x="500" y="1242" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="middle">Complete, Verified Response</text>
+  
+  <!-- Legend -->
+  <rect x="100" y="1290" width="800" height="80" rx="10" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+  <text x="500" y="1315" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333" text-anchor="middle">Key Features</text>
+  <text x="500" y="1335" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Agents share context through memory - Tools called dynamically as needed</text>
+  <text x="500" y="1355" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Each agent can use different LLMs - Full traceability and evaluation</text>
+</svg>

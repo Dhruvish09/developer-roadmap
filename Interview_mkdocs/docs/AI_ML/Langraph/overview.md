@@ -2,6 +2,8 @@
 
 LangGraph is a **framework for building multi-agent workflows** using **LLMs** (like GPT) as decision-makers. It’s built on top of **LangChain**, so it reuses concepts like chains, tools, memory, etc., but adds **graph-based state management** and **agent collaboration**.
 
+![LangGraph Complete Workflow](../../assets/images/langgraph_workflow.svg)
+
 ---
 
 ### 🧠 Agents
