@@ -153,6 +153,9 @@ nav:
       - Query Optimization: Database/SQL/query_optimization.md
       - Sharding: Database/SQL/sharding.md
       - Store Procedure: Database/SQL/store_procedure.md
+    - MONGODB:
+      - Complete Topics: Database/MONGODB/complete_mongodb.md
+      - Mongodb Practical: Database/MONGODB/mongodb_practical.md
   - ORM:
     - Django: ORM/django.md
     - Flask: ORM/flask.md
