@@ -67,6 +67,21 @@ t1.join()
 t2.join()
 ```
 
+
+```python
+import time
+from concurrent.futures import ThreadPoolExecutor
+
+def task(n):
+    print(f"Task {n} started")
+    time.sleep(2)
+    print(f"Task {n} finished")
+
+with ThreadPoolExecutor(max_workers=5) as executor:
+    for i in range(10):
+        executor.submit(task, i)
+```
+
 ---
 
 # ✅ **2. MULTIPROCESSING (Perfect Interview Explanation)**

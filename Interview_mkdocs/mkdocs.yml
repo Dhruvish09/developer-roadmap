@@ -143,7 +143,9 @@ nav:
     - Parallel Programming: Python/Parallel_Programming.md
     - MetaProgramming: Python/MetaProgramming.md
     - Multithreading & Multiprocessing: Python/Multi_processing_threading.md
-    - Celery: Python/Celery.md  
+    - Celery: Python/Celery.md 
+    - GIL: Python/GIL_Lock.md
+    - Async Programming: Python/Async_Programming.md
   - Database:
     - Redis: Database/redis.md
     - SQL:
