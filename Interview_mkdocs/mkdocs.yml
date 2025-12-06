@@ -180,7 +180,7 @@ nav:
           - Python: Interview/Oral_Q_A.md/python.md
           - Sql: Interview/Oral_Q_A.md/sql.md
     - Problem Solve: Interview/problem_solve.md
-    - Snippets: Interview/Snipets.md
+    - Snippets: Interview/Snippets.md
   - Framework:
     - Django_Framework: Framework/Django_Framework.md
     - Flask_Framework: Framework/Flask_Framework.md
