@@ -142,7 +142,7 @@ nav:
     - Memory Management: Python/Memory_Management.md
     - Parallel Programming: Python/Parallel_Programming.md
     - MetaProgramming: Python/MetaProgramming.md
-    - Multithreading & Multiprocessing: Python/Multithreading_Multiprocessing.md
+    - Multithreading & Multiprocessing: Python/Multi_processing_threading.md
     - Celery: Python/Celery.md  
   - Database:
     - Redis: Database/redis.md
