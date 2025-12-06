@@ -183,6 +183,7 @@ nav:
           - Sql: Interview/Oral_Q_A.md/sql.md
     - Problem Solve: Interview/problem_solve.md
     - Snippets: Interview/Snippets.md
+    - DSA : Interview/dsa.md
   - Framework:
     - Django_Framework: Framework/Django_Framework.md
     - Flask_Framework: Framework/Flask_Framework.md
