@@ -179,12 +179,12 @@ nav:
           - practical: Interview/Practical/SQL/sql_practical.md
           - oral: Interview/Practical/SQL/sql_questions.md
     - ORAL_QA:
-          - Python: Interview/Oral_Q_A.md/python.md
-          - Sql: Interview/Oral_Q_A.md/sql.md
+          - Python: Interview/Oral_Q_A/python.md
+          - Sql: Interview/Oral_Q_A/sql.md
     - Interviewer_Q&A:
-          - Framework: Interview/Interviewer_Q&A.md/framework.md
-          - System Design: Interview/Interviewer_Q&A.md/system_design.md
-          - Database: Interview/Interviewer_Q&A.md/database.md
+          - Framework: Interview/Interviewer_ Q&A/framework.md
+          - System Design: Interview/Interviewer_ Q&A/system_design.md
+          - Database: Interview/Interviewer_ Q&A/database.md
     - Problem Solve: Interview/problem_solve.md
     - Snippets: Interview/Snippets.md
     - DSA : Interview/dsa.md
