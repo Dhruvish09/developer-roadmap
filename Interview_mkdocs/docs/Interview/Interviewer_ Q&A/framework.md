@@ -1,11 +1,11 @@
 ## 1. Does Uvicorn Use Multithreading or Multiprocessing?
 
-### **By default**
+**By default**
 
 * Uvicorn runs as a **single process**
 * It uses an **async event loop**, not threads
 
-### **To run multiple processes**
+**To run multiple processes**
 
 ```bash
 uvicorn project.asgi:application --workers 4
@@ -13,13 +13,13 @@ uvicorn project.asgi:application --workers 4
 
 This creates **4 worker processes**.
 
-### **Simple meaning (for interview)**
+**Simple meaning (for interview)**
 
 > More workers = more processes = more requests handled in parallel.
 
 ---
 
-### ✅ How Django Database Queries Work With Uvicorn
+✅ How Django Database Queries Work With Uvicorn
 
 Uvicorn itself is **async**, but Django ORM is **synchronous**.
 
@@ -31,7 +31,7 @@ Uvicorn itself is **async**, but Django ORM is **synchronous**.
 
 ---
 
-### ✅ Interview One-Line Answers
+✅ Interview One-Line Answers
 
 **Q: Is Uvicorn multi-threaded?**
 👉 No. It is single-threaded and scales using **multiple processes**.

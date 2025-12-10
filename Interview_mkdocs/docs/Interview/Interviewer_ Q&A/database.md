@@ -5,7 +5,7 @@ A composite key is a key created using two or more columns to uniquely identify 
 
 It is used when **one column is not enough** to uniquely identify a record.
 
-### ✅ Easy Real-World Example:
+✅ Easy Real-World Example:
 
 Think of **students and courses**:
 
@@ -16,7 +16,7 @@ So, neither `student_id` nor `course_id` alone is unique.
 
 But **together they are unique** ✅
 
-### ✅ SQL Example:
+✅ SQL Example:
 
 ```sql
 CREATE TABLE enrollment (
@@ -26,7 +26,7 @@ CREATE TABLE enrollment (
 );
 ```
 
-### ✅ Sample Data:
+✅ Sample Data:
 
 | student_id | course_id |
 | ---------- | --------- |
