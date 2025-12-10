@@ -181,6 +181,10 @@ nav:
     - ORAL_QA:
           - Python: Interview/Oral_Q_A.md/python.md
           - Sql: Interview/Oral_Q_A.md/sql.md
+    - Interviewer_Q&A:
+          - Framework: Interview/Interviewer_Q&A.md/framework.md
+          - System Design: Interview/Interviewer_Q&A.md/system_design.md
+          - Database: Interview/Interviewer_Q&A.md/database.md
     - Problem Solve: Interview/problem_solve.md
     - Snippets: Interview/Snippets.md
     - DSA : Interview/dsa.md

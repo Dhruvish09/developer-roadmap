@@ -208,6 +208,8 @@ f.turn_on()
 Fan is ON
 ```
 
+> We can implement the class directly without `ABC`, but `ABC` and `@abstractmethod` are used to enforce a contract. They ensure that every subclass must implement required methods. This prevents silent bugs and improves code safety in large-scale applications.
+
 ---
 
 ## 🔄 5. **Inheritance**
