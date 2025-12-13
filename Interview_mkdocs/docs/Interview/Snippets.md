@@ -585,30 +585,115 @@ for _ in range(3):
 
 ---
 
-# 3️⃣1️⃣ ADVANCED PYTHON TRICKS
-
-### **Swap values**
+# 3️⃣1️⃣ What is the output of the following:
 
 ```python
-a, b = b, a
+a = [1, 2, 3]
+b = a
+b.append(4)
+print(a)
 ```
 
-### **Unpacking**
+**A.** `[1, 2, 3]`
+**B.** `[1, 2, 3, 4]`
+**C.** Error
+**D.** `[4, 1, 2, 3]`
+
+✅ **Correct Answer: B**
+
+---
 
 ```python
-a, *rest = [1,2,3,4]
+def add(num, lst=[]):
+    lst.append(num)
+    return lst
+
+print(add(10))
+print(add(20, []))
+print(add(30))
 ```
 
-### **Ternary in loops**
+**A.** `[10]`, `[20]`, `[30]`
+**B.** `[10]`, `[20]`, `[10, 30]`
+**C.** `[10]`, `[20]`, `[10]`
+**D.** Error
+
+✅ **Correct Answer: B**
+
+---
 
 ```python
-[x if x%2==0 else -x for x in range(10)]
+x = [[0]] * 3
+x[0][0] = 99
+print(x)
 ```
 
-### **Dictionary default**
+### **Correct Output:**
+
+```
+[[99], [99], [99]]
+```
+
+Because all three sublists reference the **same object**.
+
+---
 
 ```python
-from collections import defaultdict
-d = defaultdict(int)
-d["x"] += 1
+def func(nums=[]):
+    nums.append(1)
+    return nums
+
+print(func())
+print(func())
 ```
+
+### **Answer:**
+
+```
+[1]
+[1, 1]
+```
+
+Because `nums` default list is shared across calls.
+
+
+---
+
+```python
+x = [10, 20, 30]
+y = x[:]
+y[0] = 99
+
+print(x)
+print(y)
+```
+
+### **Answer:**
+
+```
+[10, 20, 30]
+[99, 20, 30]
+```
+
+Shallow copy works.
+
+--- 
+
+```python
+a = (1, 2, 3)
+b = (1, 2, 3)
+
+print(a is b)
+print(a == b)
+```
+
+### **Answer:**
+
+```
+False
+True
+```
+
+Immutable objects can have different memory addresses but same value.
+
+---

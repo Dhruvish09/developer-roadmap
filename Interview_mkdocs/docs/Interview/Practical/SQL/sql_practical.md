@@ -259,3 +259,46 @@ WHERE YEAR(transaction_date) IN (2013, 2023)
 GROUP BY customer_id
 HAVING COUNT(DISTINCT YEAR(transaction_date)) = 2;
 ```
+--- 
+
+### 24. Write a query to get 2nd highest salary.
+
+```sql
+SELECT salary
+FROM employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET 1;  -- OFFSET 1 skips the highest, gives 2nd highest
+```
+---
+
+### 25. Find Duplicates records count
+
+```sql
+SELECT name, COUNT(*) AS cnt
+FROM employees
+GROUP BY name
+HAVING COUNT(*) > 1;
+```
+---
+
+### 26. Get department-wise highest salary employee
+
+Tables:
+
+`employees(emp_id, emp_name, salary, dept_id)`
+`departments(dept_id, dept_name)`
+
+
+```sql
+SELECT d.dept_name, e.emp_name, e.salary
+FROM employees e
+JOIN departments d ON e.dept_id = d.dept_id
+WHERE e.salary = (
+    SELECT MAX(salary)
+    FROM employees
+    WHERE dept_id = e.dept_id
+);
+```ING COUNT(*) > 1;
+```
+
+---

@@ -275,3 +275,46 @@ utc = pytz.utc
 dt = ist.localize(datetime.now())
 print("UTC:", dt.astimezone(utc))
 ```
+## 35. Deep copy vs Shallow Copy
+
+**Shallow Copy**
+
+* Copies **only the main object**
+* **Nested objects are shared**
+* Change in nested data affects both
+
+```python
+import copy
+
+my_list = [1, 2, [3, 4], 5, 6]
+
+shallow_copy = copy.copy(my_list)
+
+# Change nested list
+shallow_copy[2][0] = 99
+
+print(my_list)        # [1, 2, [99, 4], 5, 6]
+print(shallow_copy)   # [1, 2, [99, 4], 5, 6]  ← affected
+```
+
+---
+
+**Deep Copy**
+
+* Copies **main object + nested objects**
+* Fully **independent copy**
+* Changes do NOT affect each other
+
+```python
+import copy
+
+my_list = [1, 2, [3, 4], 5, 6]
+
+deep_copy = copy.deepcopy(my_list)
+
+# Change nested list
+deep_copy[2][0] = 99
+
+print(my_list)      # [1, 2, [3, 4], 5, 6]
+print(deep_copy)    # [1, 2, [99, 4], 5, 6]  ← not affected
+```

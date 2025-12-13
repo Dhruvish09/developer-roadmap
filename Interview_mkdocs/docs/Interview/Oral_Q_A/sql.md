@@ -265,15 +265,6 @@ Adds redundancy for faster reads (opposite of normalization).
 
 ---
 
-## 🔐 ACID Properties
-
-* **A**tomicity
-* **C**onsistency
-* **I**solation
-* **D**urability
-
----
-
 ## 🧮 GROUP BY and HAVING
 
 ```sql

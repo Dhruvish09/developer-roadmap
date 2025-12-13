@@ -311,3 +311,110 @@ Bark
 | Polymorphism  | Same interface, different use | Override, Duck Typing    | `speak()`       |
 
 ---
+
+
+## 7. Instance Method vs `@classmethod` vs `@staticmethod`
+
+1️⃣ **Instance Method**
+
+Why / When to use :--
+
+* When you need to work with **object (instance) data**
+* Uses `self`
+
+```python
+class User:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        return f"Hello {self.name}"
+```
+
+---
+
+2️⃣ **@classmethod**
+
+Why / When to use:-- 
+
+* When logic is related to the **class**, not a single object
+* Used for:
+
+  * Factory methods
+  * Modifying class variables
+* Uses `cls`
+
+```python
+class User:
+    user_count = 0
+
+    def __init__(self):
+        User.user_count += 1
+
+    @classmethod
+    def total_users(cls):
+        return cls.user_count
+```
+
+✔ Can access **class variables**
+✔ Cannot access instance data directly
+
+---
+
+3️⃣ **@staticmethod**
+
+👉 Utility function inside a class
+
+Why / When to use:--
+
+* When method:
+
+  * Does NOT need `self`
+  * Does NOT need `cls`
+* Just logically belongs to the class
+
+```python
+class MathUtils:
+    @staticmethod
+    def add(a, b):
+        return a + b
+```
+
+✔ No access to instance or class data
+✔ Just a helper function
+
+---
+
+🔥 What if I **don’t use** `@staticmethod` or `@classmethod`?
+
+❌ Case 1: Not using `@staticmethod`
+
+```python
+class Math:
+    def add(a, b):   # ❌ error
+        return a + b
+
+Math.add(2, 3)
+```
+
+❌ Error because Python expects `self`
+
+✔ Fix → use `@staticmethod`
+
+---
+
+❌ Case 2: Not using `@classmethod`
+
+```python
+class User:
+    count = 0
+
+    def total(cls):   # ❌ wrong
+        return cls.count
+```
+
+❌ `cls` is not automatically passed
+
+✔ Fix → use `@classmethod`
+
+---

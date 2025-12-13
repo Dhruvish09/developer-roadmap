@@ -115,10 +115,11 @@ sqlmigrate app_name migration_name  # View SQL
 
 ---
 
-### 9. CSRF
+### 9. CSRF Token
 
 **Ans:** CSRF stands for Cross Site Request Forgery. Django protects forms using `csrf_token`.
-
+Protects against cross-site request forgery attacks.
+Ensures request came from authenticated user.
 ---
 
 ### 10. What is QuerySet?
@@ -339,5 +340,103 @@ Model.objects.values_list('field')   # Tuple
 * Testing Strategies
 * Performance Optimization
 * Security Best Practices
+
+---
+
+### 39. URL Routing to View – Full simple workflow
+
+```
+Browser URL  
+   ↓  
+Project urls.py  
+   ↓  
+App urls.py  
+   ↓  
+Matched View  
+   ↓  
+View returns response (HTML/JSON)
+```
+
+
+🟢 **Easy Interview Example Answer**
+
+**Q:** *How does Django map a URL to a view?*
+
+> Django uses URL routing. When a request comes in, Django checks `urls.py`.
+> It matches the URL pattern and maps it to the corresponding view function or class.
+> The matched view receives the request object, processes it, and returns an HttpResponse.
+
+---
+
+
+### 40. How a View Interacts With a Model in Django
+
+```
+User Request
+      ↓
+URL Router maps to View
+      ↓
+View queries Model (ORM)
+      ↓
+View gets data from database
+      ↓
+View returns Response (HTML/JSON)
+```
+
+
+**Easy Interview Example Answer**
+
+> A Django **view** interacts with a **model** by querying the model (using ORM) to fetch, create, update, or delete data.
+> The view then processes that data and returns an HTTP response (HTML/JSON).
+
+---
+
+
+### 41 **Django Template Rendering – Full Flow**
+
+```
+User Request  
+     ↓  
+URL Router  
+     ↓  
+View executes  
+     ↓  
+View fetches data from model  
+     ↓  
+render(request, template, context)  
+     ↓  
+Template engine fills placeholders  
+     ↓  
+Final HTML returned to browser
+```
+
+
+# 🎯 Interview-Ready One-Line Answer
+
+> **The view uses Django’s template engine to merge HTML templates with context data using `render()`, and the resulting HTML is returned as the response.**
+
+---
+
+### 42 Response Returned in Django
+
+
+View generates a response
+
+* `HttpResponse("Hello")`
+* `JsonResponse({"status": "ok"})`
+* `render(request, "template.html", context)`
+
+```
+View                  → returns HttpResponse
+Middleware (reverse)  → modifies/inspects it
+WSGI Layer            → prepares final HTTP response
+Browser               → receives content
+```
+
+---
+
+# 🎯 **Interview-Friendly One-Line Summary**
+
+> A “response returned” means the view has finished its logic and given Django an HttpResponse object, which is then processed by middleware and sent back to the client.
 
 ---

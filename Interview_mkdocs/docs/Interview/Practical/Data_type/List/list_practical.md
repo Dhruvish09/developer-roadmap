@@ -22,6 +22,7 @@
 16. Sort Elements in List Using Decorator
 17. Generate Fibonacci Series Using List
 18. Implement Binary Search Algorithm
+20.Find missing number from a list
 
 ---
 
@@ -314,3 +315,5 @@ def binary_search(arr, target):
 sorted_list = [1, 3, 5, 7, 9, 11, 13]
 print("Target found at index:", binary_search(sorted_list, 7))
 ```
+
+Find missing number from a list

@@ -210,3 +210,29 @@ def remove_odd_indices(s):
 
 print(remove_odd_indices("Dhruvish"))  # 'Druvh'
 ```
+
+
+---
+
+## 1️⃣6 Write a function that returns the longest substring without repeating characters.
+
+```python
+def longest_unique_substring(s):
+    char_set = set()
+    left = 0
+    max_sub = ""
+
+    for right in range(len(s)):
+        while s[right] in char_set:
+            char_set.remove(s[left])
+            left += 1
+
+        char_set.add(s[right])
+
+        if right - left + 1 > len(max_sub):
+            max_sub = s[left:right + 1]
+
+    return max_sub
+
+print(longest_unique_substring("abcabcbb"))
+```
