@@ -187,6 +187,8 @@ nav:
           - Database: Interview/Interviewer_ Q&A/database.md
     - Problem Solve: Interview/problem_solve.md
     - Snippets: Interview/Snippets.md
+    - Sceanio_based_Q&A: Interview/sceanio_based.md
+    - Communication: Interview/communication.md
     - DSA : Interview/dsa.md
   - Framework:
     - Django_Framework: Framework/Django_Framework.md
