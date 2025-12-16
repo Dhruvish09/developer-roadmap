@@ -411,7 +411,7 @@ Final HTML returned to browser
 ```
 
 
-# 🎯 Interview-Ready One-Line Answer
+🎯 Interview-Ready One-Line Answer
 
 > **The view uses Django’s template engine to merge HTML templates with context data using `render()`, and the resulting HTML is returned as the response.**
 
@@ -435,8 +435,60 @@ Browser               → receives content
 
 ---
 
-# 🎯 **Interview-Friendly One-Line Summary**
+🎯 **Interview-Friendly One-Line Summary**
 
 > A “response returned” means the view has finished its logic and given Django an HttpResponse object, which is then processed by middleware and sent back to the client.
 
 ---
+
+
+### 43 Abstract User Base in Django
+
+**In Django, Abstract User Base refers to creating a custom user model using `AbstractUser` or `AbstractBaseUser` to customize authentication behavior.**
+
+---
+
+✅ Why we use Abstract User Base?
+
+The default Django `User` model is limited:
+
+* Username is mandatory
+* Email is not unique
+* Hard to add custom fields
+
+So Django provides **abstract base classes** to create flexible user models.
+
+---
+
+1️⃣ `AbstractUser` (Most commonly used)
+
+**Explanation:**
+
+> `AbstractUser` is an abstract version of Django’s default user model. It already includes username, email, password, permissions, and admin support. We extend it to add extra fields.
+
+**When to use:**
+
+* Small customization needed
+* Want to keep username login
+* Faster and safer
+
+**Example:**
+
+```python
+class User(AbstractUser):
+    phone = models.CharField(max_length=15)
+```
+
+---
+
+2️⃣ `AbstractBaseUser` (Advanced)
+
+**Explanation:**
+
+> `AbstractBaseUser` provides only core authentication features like password hashing and last login. We must define fields, user manager, permissions, and login logic ourselves.
+
+**When to use:**
+
+* Email or phone based login
+* Full control over authentication
+* Complex business requirements

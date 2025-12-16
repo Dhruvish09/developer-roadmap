@@ -418,3 +418,46 @@ class User:
 ✔ Fix → use `@classmethod`
 
 ---
+
+## 8. Metaclass
+
+Step 1: Create Metaclass
+
+```python
+class CheckRoleMeta(type):
+    def __new__(cls, name, bases, dct):
+        if 'role' not in dct:
+            raise TypeError("Class must define 'role'")
+        return super().__new__(cls, name, bases, dct)
+```
+
+---
+
+Step 2: Use Metaclass
+
+```python
+class User(metaclass=CheckRoleMeta):
+    role = "admin"
+```
+
+✔ Class created successfully
+✔ Rule enforced at class creation
+
+---
+
+❌ Without role (Error)
+
+```python
+class Employee(metaclass=CheckRoleMeta):
+    pass
+```
+
+🚫 Error: `Class must define 'role'`
+
+---
+
+🧠 USE CASE
+
+👉 Without metaclasses, classes are created normally. With metaclasses, we can add validation or modify classes at creation time. This is useful in frameworks like Django to enforce rules automatically.
+
+---
