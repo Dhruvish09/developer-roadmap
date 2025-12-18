@@ -320,6 +320,7 @@ nav:
 
   - Communication:
     - Manager Round: Communication/Manger_Round.md
+    - CTO Round: Communication/CTO.md
 
 plugins:
   - offline
