@@ -318,6 +318,9 @@ nav:
           - Alerting: System Design/Observability/Alerting.md
           - Tracing: System Design/Observability/Tracing.md
 
+      - Project Design: 
+          - WeamAI: System Design/Project/weam_design.md
+
   - Communication:
     - Manager Round: Communication/Manger_Round.md
     - CTO Round: Communication/CTO.md
