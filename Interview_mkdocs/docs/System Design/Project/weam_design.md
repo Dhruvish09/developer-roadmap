@@ -110,6 +110,10 @@
 
 * Docker
 * Docker Compose
+* Aws 
+* Github Action CI/CD
+* Kubernate
+
 
 ---
 
