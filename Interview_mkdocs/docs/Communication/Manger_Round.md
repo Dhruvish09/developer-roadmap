@@ -181,3 +181,19 @@ Here’s your **Technical + HR Interview Q\&A Guide** beautifully formatted in M
 5. When can I take a vacation after joining?
 
 ---
+
+### **16. What is your role and responsiblity**
+
+* Understand and estimate requirements and user stories
+* Create technical design based on business needs
+* Develop the required features and write unit test cases
+* Deploy changes across different environments (Dev, QA, Production)
+* Support live production systems
+* Fix bugs and work on new feature development
+
+---
+
+### **Even shorter (spoken answer – 20 seconds)**
+
+> *“My role involves understanding and estimating requirements, designing the technical solution, developing and testing the code, deploying it to different environments, and supporting production with bug fixes and new feature development.”*
+

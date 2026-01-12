@@ -22,6 +22,7 @@
 16. Sort Elements in List Using Decorator
 17. Generate Fibonacci Series Using List
 18. Implement Binary Search Algorithm
+19. Seprate 3 list based on proper index vise
 20.Find missing number from a list
 
 ---
@@ -316,4 +317,22 @@ sorted_list = [1, 3, 5, 7, 9, 11, 13]
 print("Target found at index:", binary_search(sorted_list, 7))
 ```
 
-Find missing number from a list
+
+## 1️⃣9 Seprate 3 list based on proper index vise
+
+my_list = [[1,2,3],[4,5,6]]
+new_list = []
+for i in zip(*my_list):
+    new_list.append(list(i))
+print(new_list) # [[1, 4], [2, 5], [3, 6]]
+
+
+## 20. Find missing number from a list
+
+lst = [1, 2, 4, 6, 7, 9, 10]
+new_list = []
+for i in rang
+e(1,max(lst)+1):
+    if i not in lst:
+        new_list.append(i)
+print(new_list)
