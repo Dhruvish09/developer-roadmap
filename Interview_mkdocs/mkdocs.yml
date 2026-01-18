@@ -147,6 +147,7 @@ nav:
     - GIL: Python/GIL_Lock.md
     - Async Programming: Python/Async_Programming.md
     - JWT Token: Python/Jwt_token.md
+    - OAuth Token: Python/OAuth_token.md
   - Database:
     - Redis: Database/redis.md
     - SQL:
