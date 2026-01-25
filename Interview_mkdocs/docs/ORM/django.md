@@ -1,92 +1,234 @@
-# Django ORM
+# 🟢 1. CREATE (INSERT)
 
-## 1. Create Table
-        from django.db import models
+```
+User.objects.create(name="John", age=25)
 
-        class MyModel(models.Model):
-            id = models.AutoField(primary_key=True)
-            name = models.CharField(max_length=100)
-            description = models.TextField()
-            email = models.EmailField()
-            age = models.IntegerField()
-            account_balance = models.DecimalField(max_digits=10, decimal_places=2)
-            height = models.FloatField()
-            is_active = models.BooleanField(default=False)
-            birth_date = models.DateField()
-            last_updated = models.DateTimeField()
-            appointment_time = models.TimeField()
-            website_url = models.URLField()
-            document_file = models.FileField(upload_to='uploads/')
-            profile_picture = models.ImageField(upload_to='images/')
-            related_model = models.ForeignKey('AnotherModel', on_delete=models.CASCADE)
-            related_models = models.ManyToManyField('YetAnotherModel')
+u = User(name="John", age=25)
+u.save()
 
-        class AnotherModel(models.Model):
-            # Define fields for AnotherModel
-            pass
-        
-        class YetAnotherModel(models.Model):
-            # Define fields for YetAnotherModel
-            pass
+User.objects.bulk_create([
+    User(name="A"),
+    User(name="B")
+])
 
-## 2. Select data
-    User.objects.filter(gender='F')
+Order.objects.create(user=user_obj, total=100)
 
-## 3. Operators
+user.groups.add(group_obj)
+```
 
-- **IN Operator:**
-  The `IN` operator is used to filter querysets based on whether a field's value is within a given list of values.
-    ```python
-        User.objects.filter(gender__in=['M', 'F'])
-    ```
+---
 
-- **LIKE Operator:**
-    ```python
-        matching_users = User.objects.filter(Q(name__icontains='John') | Q(email__icontains='example.com'))
-        for user in matching_users:
-            print(user.name, user.email)
-    ```
+# 🔵 2. READ (SELECT)
 
-## 4. ORDER BY
-    asceding_ordered = User.objects.order_by('name') # Return asceding order record
-    descending_ordered = User.objects.order_by('-name') # Return descending order record
+## 2.1 Basic Select
 
-## 5. IS NULL and IS NOT NULL
+```
+User.objects.all()
 
-- **IS NULL:**
-    ```python
-        users_with_null_mobile = User.objects.filter(mobile__isnull=True)
-    ```
+User.objects.get(id=1)
 
-- **IS NOT NULL:**
-    ```python
-        users_with_mobile = User.objects.exclude(mobile__isnull=True)
-    ```
+User.objects.filter(age=25)
 
-## 6. Update and Delete
+User.objects.exclude(age=25)
+```
 
-- **Update:**
-    ```python
-        student = Student.objects.get(id=4)
-        student.age = 25
-        student.save()
-    ```
+---
 
-- **Delete:**
-    ```python
-        Student.objects.filter(id=4).delete()
-    ```
+## 2.2 Conditions
 
-## 7. GROUP BY and HAVING
+### AND
 
-- **GROUP BY:**
-    GROUP BY in Django ORM is achieved using the values() method to specify the fields you want to group your query results by. It organizes the results into groups based on one or more columns.
-    ```python
-        Order.objects.values('customer_id').annotate(total_quantity=Sum('quantity'))
-    ```
+```
+User.objects.filter(age=25, is_active=True)
+```
 
-- **HAVING:**
-    HAVING in Django ORM is performed using the annotate() method to calculate aggregates and then the filter() method to apply conditions on those aggregated results, similar to the SQL HAVING clause.
-    ```python
-        Order.objects.values('customer_id').annotate(total_quantity=Sum('quantity')).filter(total_quantity__gt=100)
-    ```
+### OR
+
+```
+User.objects.filter(Q(age=20) | Q(age=30))
+```
+
+### IN
+
+```
+User.objects.filter(id__in=[1, 2, 3])
+```
+
+### NOT IN
+
+```
+User.objects.exclude(id__in=[1, 2, 3])
+```
+
+---
+
+## 2.3 LIKE / SEARCH
+
+```
+User.objects.filter(name__icontains="john")
+
+User.objects.filter(name__startswith="A")
+
+User.objects.filter(name__endswith="Z")
+```
+
+---
+
+## 2.4 NULL Checks
+
+```
+User.objects.filter(email__isnull=True)
+
+User.objects.filter(email__isnull=False)
+```
+
+---
+
+## 2.5 ORDER / LIMIT
+
+```
+User.objects.order_by("name")
+
+User.objects.order_by("-name")
+
+User.objects.all()[:5]
+
+User.objects.all()[5:10]
+```
+
+---
+
+## 2.6 Values / Optimization
+
+```
+User.objects.values("id", "name")
+
+User.objects.values_list("name", flat=True)
+
+User.objects.distinct()
+
+User.objects.count()
+
+User.objects.exists()
+```
+
+---
+
+## 2.7 Joins
+
+```
+Order.objects.select_related("user")
+
+User.objects.prefetch_related("groups")
+```
+
+---
+
+# 🟡 3. UPDATE
+
+## 3.1 Single Record
+
+```
+u = User.objects.get(id=1)
+u.age = 30
+u.save()
+```
+
+---
+
+## 3.2 Multiple Records
+
+```
+User.objects.filter(age=20).update(age=21)
+```
+
+---
+
+## 3.3 Using F Expressions
+
+```
+User.objects.update(age=F("age") + 1)
+```
+
+---
+
+## 3.4 Relations
+
+```
+user.groups.remove(group_obj)
+
+user.groups.clear()
+```
+
+---
+
+# 🔴 4. DELETE
+
+```
+User.objects.get(id=1).delete()
+
+User.objects.filter(age__lt=18).delete()
+
+User.objects.all().delete()
+```
+
+---
+
+# 🟣 5. AGGREGATION (GROUP BY / HAVING)
+
+## GROUP BY
+
+```
+Order.objects.values("user_id")
+     .annotate(total=Sum("amount"))
+```
+
+---
+
+## HAVING
+
+```
+Order.objects.values("user_id")
+     .annotate(total=Sum("amount"))
+     .filter(total__gt=100)
+```
+
+---
+
+## Aggregates
+
+```
+User.objects.aggregate(Max("age"))
+
+User.objects.aggregate(Min("age"))
+
+User.objects.aggregate(Avg("age"))
+
+Order.objects.aggregate(Sum("amount"))
+```
+
+---
+
+# ⚡ 6. DATE / RANGE FILTERS
+
+```
+User.objects.filter(age__range=(18, 30))
+
+User.objects.filter(created_at__date="2025-01-01")
+
+User.objects.filter(created_at__year=2025)
+```
+
+---
+
+# ✅ HOW TO REMEMBER (INTERVIEW TIP)
+
+```
+CREATE  → create(), save(), bulk_create()
+READ    → filter(), get(), exclude(), order_by()
+UPDATE  → update(), save(), F()
+DELETE  → delete()
+GROUP   → values() + annotate() + filter()
+```
+
+---

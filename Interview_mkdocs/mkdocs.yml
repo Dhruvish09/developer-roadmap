@@ -197,22 +197,22 @@ nav:
     - Flask_Framework: Framework/Flask_Framework.md
     - Fastapi_Framework: Framework/Fastapi_Framework.md
 
-  - AI/ML :
-    - Overview: AI_ML/overview.md
-    - Langraph:
-      - Overview: AI_ML/Langraph/overview.md
-      - Agents: AI_ML/Langraph/Agents.md
-      - Chains: AI_ML/Langraph/Chains.md
-      - Memory: AI_ML/Langraph/Memory.md
-      - Prompting: AI_ML/Langraph/Prompting.md
-      - Tools: AI_ML/Langraph/Tools.md
-      - Vectorstores: AI_ML/Langraph/Vectorstores.md
-      - LLMs: AI_ML/Langraph/LLMs.md
-      - Document Loaders: AI_ML/Langraph/Document_Loaders.md
-      - Evaluation: AI_ML/Langraph/Evaluation.md
-    - AI Concepts: AI_ML/AI_Concepts.md
-    - Interview: AI_ML/interview.md
-    - Feature Flow: AI_ML/feature_flow.md
+  # - AI/ML :
+  #   - Overview: AI_ML/overview.md
+  #   - Langraph:
+  #     - Overview: AI_ML/Langraph/overview.md
+  #     - Agents: AI_ML/Langraph/Agents.md
+  #     - Chains: AI_ML/Langraph/Chains.md
+  #     - Memory: AI_ML/Langraph/Memory.md
+  #     - Prompting: AI_ML/Langraph/Prompting.md
+  #     - Tools: AI_ML/Langraph/Tools.md
+  #     - Vectorstores: AI_ML/Langraph/Vectorstores.md
+  #     - LLMs: AI_ML/Langraph/LLMs.md
+  #     - Document Loaders: AI_ML/Langraph/Document_Loaders.md
+  #     - Evaluation: AI_ML/Langraph/Evaluation.md
+  #   - AI Concepts: AI_ML/AI_Concepts.md
+  #   - Interview: AI_ML/interview.md
+  #   - Feature Flow: AI_ML/feature_flow.md
   - Devops:
     - Docker:
       - Docker: Devops/Docker/docker.md
@@ -222,9 +222,9 @@ nav:
       - Overview: Devops/AWS/overview.md
     - Metrices: Devops/monitoring_observability.md
 
-  - Roadmap:
-    - Python:
-      - Python Developer: Roadmap/Python/developer_roadmap.md
+  # - Roadmap:
+  #   - Python:
+  #     - Python Developer: Roadmap/Python/developer_roadmap.md
 
   - System Design:
       - Overview: System Design/overview.md
