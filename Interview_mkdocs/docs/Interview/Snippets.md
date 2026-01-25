@@ -697,3 +697,184 @@ True
 Immutable objects can have different memory addresses but same value.
 
 ---
+
+## 🔹 1. List / Tuple Slicing
+
+```python
+a = [10, 20, 30, 40, 50, 60]
+```
+
+| Code      | Explanation            | Output                     |
+| --------- | ---------------------- | -------------------------- |
+| `a[:]`    | Full copy              | `[10, 20, 30, 40, 50, 60]` |
+| `a[::2]`  | Every 2nd element      | `[10, 30, 50]`             |
+| `a[1::2]` | Every 2nd from index 1 | `[20, 40, 60]`             |
+| `a[::-1]` | Reverse list           | `[60, 50, 40, 30, 20, 10]` |
+| `a[1:4]`  | Index 1 → 3            | `[20, 30, 40]`             |
+| `a[-3:]`  | Last 3 elements        | `[40, 50, 60]`             |
+| `a[:-2]`  | All except last 2      | `[10, 20, 30, 40]`         |
+| `a[::3]`  | Every 3rd element      | `[10, 40]`                 |
+
+---
+
+## 🔹 2. Set Operations (With Example)
+
+```python
+a = set("Hello")   # {'H','e','l','o'}
+b = set("World")   # {'W','o','r','l','d'}
+```
+
+| Code     | Meaning              | Output                          |
+| -------- | -------------------- | ------------------------------- |
+| `a - b`  | In `a` not in `b`    | `{'H', 'e'}`                    |
+| `b - a`  | In `b` not in `a`    | `{'W', 'r', 'd'}`               |
+| `a & b`  | Common elements      | `{'l', 'o'}`                    |
+| `a \| b` | Union (all unique)   | `{'H','e','l','o','W','r','d'}` |
+| `a ^ b`  | Symmetric difference | `{'H','e','W','r','d'}`         |
+
+---
+
+## 🔹 3. List Reference vs Copy (VERY IMPORTANT 🔥)
+
+```python
+a = [1, 2, 3]
+b = a
+c = a[:]
+```
+
+| Expression | Result  |
+| ---------- | ------- |
+| `a is b`   | `True`  |
+| `a is c`   | `False` |
+| `a == c`   | `True`  |
+
+```python
+b.append(4)
+print(a)   # [1, 2, 3, 4]
+print(c)   # [1, 2, 3]
+```
+
+---
+
+## 🔹 4. List Methods With Example
+
+```python
+a = [1, 2, 2, 3]
+```
+
+| Code              | Output / Effect      |
+| ----------------- | -------------------- |
+| `a.count(2)`      | `2`                  |
+| `a.index(3)`      | `3`                  |
+| `a.append(5)`     | `[1, 2, 2, 3, 5]`    |
+| `a.extend([6,7])` | `[1, 2, 2, 3, 6, 7]` |
+| `a.pop()`         | Removes last element |
+| `a.remove(2)`     | Removes first `2`    |
+
+---
+
+## 🔹 5. Tuple / List Unpacking
+
+```python
+x = [1, 2, 3, 4, 5]
+```
+
+| Code           | Result                |
+| -------------- | --------------------- |
+| `a, b = 1, 2`  | `a=1, b=2`            |
+| `a, *b = x`    | `a=1, b=[2,3,4,5]`    |
+| `*a, b = x`    | `a=[1,2,3,4], b=5`    |
+| `a, b, *c = x` | `a=1, b=2, c=[3,4,5]` |
+
+---
+
+## 🔹 6. List / Dict / Set Comprehension
+
+```python
+a = [1, 2, 3, 4]
+```
+
+| Code                           | Output                  |
+| ------------------------------ | ----------------------- |
+| `[x*x for x in a]`             | `[1, 4, 9, 16]`         |
+| `[x for x in a if x % 2 == 0]` | `[2, 4]`                |
+| `{x*x for x in a}`             | `{1, 4, 9, 16}`         |
+| `{x: x*x for x in a}`          | `{1:1, 2:4, 3:9, 4:16}` |
+
+---
+
+## 🔹 7. Tricky but Common Python Snippets 😈
+
+### 🔸 Mutable default argument
+
+```python
+def add(x, lst=[]):
+    lst.append(x)
+    return lst
+
+add(1)  # [1]
+add(2)  # [1, 2]  ❌ unexpected
+```
+
+### ✅ Correct way
+
+```python
+def add(x, lst=None):
+    if lst is None:
+        lst = []
+    lst.append(x)
+    return lst
+```
+
+---
+
+## 🔹 8. List Multiplication Trap
+
+```python
+a = [[0]] * 3
+a[0][0] = 1
+print(a)  # [[1], [1], [1]] ❌
+```
+
+✅ Correct:
+
+```python
+a = [[0] for _ in range(3)]
+```
+
+---
+
+## 🔹 9. `+` vs `+=`
+
+```python
+a = [1, 2]
+b = a
+
+a += [3]
+print(b)  # [1, 2, 3]
+```
+
+```python
+a = [1, 2]
+b = a
+
+a = a + [3]
+print(b)  # [1, 2]
+```
+
+---
+
+## 🔹 10. Your Example Revisited
+
+```python
+a = [(1,2,3,4), (33,22,11), 0, 4, 5]
+a[::3]
+```
+
+➡ Output:
+
+```python
+[(1, 2, 3, 4), 4]
+```
+
+---
