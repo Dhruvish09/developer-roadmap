@@ -235,92 +235,92 @@ nav:
           - E-Commerce: System Design/System Design Guide/E-Commerce.md
           - Most Ask System Design: System Design/System Design Guide/Most_Ask_System_Design.md
 
-      - Core Concepts: 
-          - Client-Server Model: System Design/Core Concepts/Client-Server Model.md
-          - Stateless_Stateful: System Design/Core Concepts/Stateless_Stateful.md
-          - Sync_Async Communication: System Design/Core Concepts/Sync_Async Communication.md
-          - REST_RPC_GraphQL: System Design/Core Concepts/REST_RPC_GraphQL.md
-          - Microservices_Monoliths: System Design/Core Concepts/Microservices_Monoliths.md
-          - Service Discovery: System Design/Core Concepts/Service Discovery.md
-          - Load Balancing: System Design/Core Concepts/Load Balancing.md
+      # - Core Concepts: 
+      #     - Client-Server Model: System Design/Core Concepts/Client-Server Model.md
+      #     - Stateless_Stateful: System Design/Core Concepts/Stateless_Stateful.md
+      #     - Sync_Async Communication: System Design/Core Concepts/Sync_Async Communication.md
+      #     - REST_RPC_GraphQL: System Design/Core Concepts/REST_RPC_GraphQL.md
+      #     - Microservices_Monoliths: System Design/Core Concepts/Microservices_Monoliths.md
+      #     - Service Discovery: System Design/Core Concepts/Service Discovery.md
+      #     - Load Balancing: System Design/Core Concepts/Load Balancing.md
 
-      - API Design & Gateways: 
-          - API Specs: System Design/API Design & Gateways/API Specs.md
-          - API Versioning: System Design/API Design & Gateways/API Versioning.md
-          - API Gateway: System Design/API Design & Gateways/API Gateway.md
-          - Circuit Breakers: System Design/API Design & Gateways/Circuit Breakers.md
-          - Rate Limiting: System Design/API Design & Gateways/Rate Limiting_Auth.md
+      # - API Design & Gateways: 
+      #     - API Specs: System Design/API Design & Gateways/API Specs.md
+      #     - API Versioning: System Design/API Design & Gateways/API Versioning.md
+      #     - API Gateway: System Design/API Design & Gateways/API Gateway.md
+      #     - Circuit Breakers: System Design/API Design & Gateways/Circuit Breakers.md
+      #     - Rate Limiting: System Design/API Design & Gateways/Rate Limiting_Auth.md
 
-      - Design Patterns & Principles: 
-          - 12Factor App: System Design/Design Patterns & Principles/12Factor App.md
-          - Classic Patterns: System Design/Design Patterns & Principles/Classic Patterns.md
-          - Dependency Injection: System Design/Design Patterns & Principles/Dependency Injection.md
-          - Repository Pattern: System Design/Design Patterns & Principles/Repository Pattern.md
-          - CQRS: System Design/Design Patterns & Principles/CQRS.md
-          - Saga Pattern: System Design/Design Patterns & Principles/Saga Pattern.md
-          - Event-driven Architecture: System Design/Design Patterns & Principles/Event-driven Architecture.md
+      # - Design Patterns & Principles: 
+      #     - 12Factor App: System Design/Design Patterns & Principles/12Factor App.md
+      #     - Classic Patterns: System Design/Design Patterns & Principles/Classic Patterns.md
+      #     - Dependency Injection: System Design/Design Patterns & Principles/Dependency Injection.md
+      #     - Repository Pattern: System Design/Design Patterns & Principles/Repository Pattern.md
+      #     - CQRS: System Design/Design Patterns & Principles/CQRS.md
+      #     - Saga Pattern: System Design/Design Patterns & Principles/Saga Pattern.md
+      #     - Event-driven Architecture: System Design/Design Patterns & Principles/Event-driven Architecture.md
 
-      - Message Queues: 
-          - Message Brokers: System Design/Message Queues & Async Processing/Message Brokers.md
-          - Pub_Sub: System Design/Message Queues & Async Processing/Pub_Sub.md
-          - Task Queues: System Design/Message Queues & Async Processing/Task Queues.md
-          - Dead Letter Queues: System Design/Message Queues & Async Processing/Dead Letter Queues (DLQ).md
+      # - Message Queues: 
+      #     - Message Brokers: System Design/Message Queues & Async Processing/Message Brokers.md
+      #     - Pub_Sub: System Design/Message Queues & Async Processing/Pub_Sub.md
+      #     - Task Queues: System Design/Message Queues & Async Processing/Task Queues.md
+      #     - Dead Letter Queues: System Design/Message Queues & Async Processing/Dead Letter Queues (DLQ).md
 
-      - Distributed Systems: 
-          - Consensus Algorithms: System Design/Distributed Systems Concepts/Consensus Algorithms.md
-          - Leader Election: System Design/Distributed Systems Concepts/Leader Election.md
-          - Quorum: System Design/Distributed Systems Concepts/Quorum.md
-          - Logical Clocks: System Design/Distributed Systems Concepts/Logical Clocks.md
-          - Distributed Locks: System Design/Distributed Systems Concepts/Distributed Locks.md
+      # - Distributed Systems: 
+      #     - Consensus Algorithms: System Design/Distributed Systems Concepts/Consensus Algorithms.md
+      #     - Leader Election: System Design/Distributed Systems Concepts/Leader Election.md
+      #     - Quorum: System Design/Distributed Systems Concepts/Quorum.md
+      #     - Logical Clocks: System Design/Distributed Systems Concepts/Logical Clocks.md
+      #     - Distributed Locks: System Design/Distributed Systems Concepts/Distributed Locks.md
 
-      - Data Management: 
-          - SQL_NoSQL: System Design/Data Management/SQL_NoSQL.md
-          - CAP Theorem: System Design/Data Management/CAP Theorem.md
-          - Replication: System Design/Data Management/Replication.md
-          - Eventual Consistency: System Design/Data Management/Eventual Consistency.md
-          - Indexing_Query Optimization: System Design/Data Management/Indexing_Query Optimization.md
-          - Caching Strategies: System Design/Data Management/Caching Strategies.md
+      # - Data Management: 
+      #     - SQL_NoSQL: System Design/Data Management/SQL_NoSQL.md
+      #     - CAP Theorem: System Design/Data Management/CAP Theorem.md
+      #     - Replication: System Design/Data Management/Replication.md
+      #     - Eventual Consistency: System Design/Data Management/Eventual Consistency.md
+      #     - Indexing_Query Optimization: System Design/Data Management/Indexing_Query Optimization.md
+      #     - Caching Strategies: System Design/Data Management/Caching Strategies.md
 
-      - Caching: 
-          - Caching Tools: System Design/Caching/Caching Tools.md
-          - CDN Edge Caching: System Design/Caching/CDN Edge Caching.md
-          - Cache Invalidation: System Design/Caching/Cache Invalidation.md
-          - Eviction Policies: System Design/Caching/Eviction Policies.md
+      # - Caching: 
+      #     - Caching Tools: System Design/Caching/Caching Tools.md
+      #     - CDN Edge Caching: System Design/Caching/CDN Edge Caching.md
+      #     - Cache Invalidation: System Design/Caching/Cache Invalidation.md
+      #     - Eviction Policies: System Design/Caching/Eviction Policies.md
 
-      - Scalability: 
-          - Horizontal_Vertical Scaling: System Design/Scalability/Horizontal_Vertical Scaling.md
-          - Load Balancers: System Design/Scalability/Load Balancers.md
-          - Sharding_Partitioning: System Design/Scalability/Sharding_Partitioning.md
-          - Sticky Sessions: System Design/Scalability/Sticky Sessions.md
-          - CDN: System Design/Scalability/CDN.md
+      # - Scalability: 
+      #     - Horizontal_Vertical Scaling: System Design/Scalability/Horizontal_Vertical Scaling.md
+      #     - Load Balancers: System Design/Scalability/Load Balancers.md
+      #     - Sharding_Partitioning: System Design/Scalability/Sharding_Partitioning.md
+      #     - Sticky Sessions: System Design/Scalability/Sticky Sessions.md
+      #     - CDN: System Design/Scalability/CDN.md
 
-      - High Availability: 
-          - Redundancy: System Design/High Availability & Fault Tolerance/Redundancy.md
-          - Health Checks: System Design/High Availability & Fault Tolerance/Health Checks.md
-          - Failover Mechanisms: System Design/High Availability & Fault Tolerance/Failover Mechanisms.md
-          - Auto Healing: System Design/High Availability & Fault Tolerance/Auto Healing.md
-          - Graceful Degradation: System Design/High Availability & Fault Tolerance/Graceful Degradation.md
+      # - High Availability: 
+      #     - Redundancy: System Design/High Availability & Fault Tolerance/Redundancy.md
+      #     - Health Checks: System Design/High Availability & Fault Tolerance/Health Checks.md
+      #     - Failover Mechanisms: System Design/High Availability & Fault Tolerance/Failover Mechanisms.md
+      #     - Auto Healing: System Design/High Availability & Fault Tolerance/Auto Healing.md
+      #     - Graceful Degradation: System Design/High Availability & Fault Tolerance/Graceful Degradation.md
 
-      - Security: 
-          - Authentication: System Design/Security/Authentication.md
-          - Authorization: System Design/Security/Authorization.md
-          - Encryption: System Design/Security/Encryption.md
-          - Transport Security: System Design/Security/Transport Security.md
-          - Common Threats: System Design/Security/Common Threats.md
-          - DDoS Protection: System Design/Security/DDoS Protection.md
-          - Pre-SignedURL: System Design/Security/Pre-SignedUrl.md
+      # - Security: 
+      #     - Authentication: System Design/Security/Authentication.md
+      #     - Authorization: System Design/Security/Authorization.md
+      #     - Encryption: System Design/Security/Encryption.md
+      #     - Transport Security: System Design/Security/Transport Security.md
+      #     - Common Threats: System Design/Security/Common Threats.md
+      #     - DDoS Protection: System Design/Security/DDoS Protection.md
+      #     - Pre-SignedURL: System Design/Security/Pre-SignedUrl.md
 
-      - System Performance: 
-          - API Profiling_Benchmarking: System Design/System Performance & Optimization/API Profiling_Benchmarking.md
-          - Backpressure Handling: System Design/System Performance & Optimization/Backpressure Handling.md
-          - Bulkhead Pattern: System Design/System Performance & Optimization/Bulkhead Pattern.md
-          - Rate Limiting_Throttling: System Design/System Performance & Optimization/Rate Limiting_Throttling.md
+      # - System Performance: 
+      #     - API Profiling_Benchmarking: System Design/System Performance & Optimization/API Profiling_Benchmarking.md
+      #     - Backpressure Handling: System Design/System Performance & Optimization/Backpressure Handling.md
+      #     - Bulkhead Pattern: System Design/System Performance & Optimization/Bulkhead Pattern.md
+      #     - Rate Limiting_Throttling: System Design/System Performance & Optimization/Rate Limiting_Throttling.md
 
-      - Observability: 
-          - Logging: System Design/Observability/Logging.md
-          - Monitoring: System Design/Observability/Monitoring.md
-          - Alerting: System Design/Observability/Alerting.md
-          - Tracing: System Design/Observability/Tracing.md
+      # - Observability: 
+      #     - Logging: System Design/Observability/Logging.md
+      #     - Monitoring: System Design/Observability/Monitoring.md
+      #     - Alerting: System Design/Observability/Alerting.md
+      #     - Tracing: System Design/Observability/Tracing.md
 
       - Project Design: 
           - WeamAI: System Design/Project/weam_design.md
