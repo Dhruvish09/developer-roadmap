@@ -229,7 +229,7 @@ nav:
   - System Design:
       - Overview: System Design/overview.md
       - Application Design:
-        - : System Design/Application/order_payment.md
+        - Order Payment : System Design/Application/order_payment.md
       - System Design Guide: 
         - System Design Process: System Design/System Design Guide/System Design Process.md
         - Request-Response: System Design/System Design Guide/Request-Response.md            
