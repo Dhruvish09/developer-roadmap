@@ -178,3 +178,68 @@ CONFIRMED
 
 FAILED / CANCELLED / REFUNDED
 ```
+
+---
+
+## Database Design
+### Order Table
+
+```sql
+orders
+-----
+id (UUID)
+user_id
+status
+total_amount
+created_at
+```
+
+### Order Items
+
+```sql
+order_items
+-----------
+order_id
+product_id
+quantity
+price
+```
+
+### Payments
+
+```sql
+payments
+--------
+id
+order_id
+payment_gateway
+status
+transaction_id
+amount
+created_at
+```
+
+### Inventory
+
+```sql
+inventory
+---------
+product_id
+available_qty
+reserved_qty
+```
+
+---
+
+
+## Tech Stack (Example – AWS Friendly)
+
+* **Backend**: Python (FastAPI) / Java (Spring Boot)
+* **DB**: PostgreSQL
+* **Queue**: AWS SQS / Kafka
+* **Cache**: Redis (locks, idempotency)
+* **Payments**: Razorpay / Stripe
+* **Infra**: ECS + ALB
+* **CI/CD**: GitHub Actions
+
+---
