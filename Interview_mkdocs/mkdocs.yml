@@ -228,12 +228,14 @@ nav:
 
   - System Design:
       - Overview: System Design/overview.md
+      - Application Design:
+        - : System Design/Application/order_payment.md
       - System Design Guide: 
-          - System Design Process: System Design/System Design Guide/System Design Process.md
-          - Request-Response: System Design/System Design Guide/Request-Response.md            
-          - 30-Concepts-Cover-Project: System Design/System Design Guide/30_Concept_Cover_Project.md
-          - E-Commerce: System Design/System Design Guide/E-Commerce.md
-          - Most Ask System Design: System Design/System Design Guide/Most_Ask_System_Design.md
+        - System Design Process: System Design/System Design Guide/System Design Process.md
+        - Request-Response: System Design/System Design Guide/Request-Response.md            
+        - 30-Concepts-Cover-Project: System Design/System Design Guide/30_Concept_Cover_Project.md
+        - E-Commerce: System Design/System Design Guide/E-Commerce.md
+        - Most Ask System Design: System Design/System Design Guide/Most_Ask_System_Design.md
 
       # - Core Concepts: 
       #     - Client-Server Model: System Design/Core Concepts/Client-Server Model.md
@@ -323,7 +325,7 @@ nav:
       #     - Tracing: System Design/Observability/Tracing.md
 
       - Project Design: 
-          - WeamAI: System Design/Project/weam_design.md
+        - WeamAI: System Design/Project/weam_design.md
 
   - Communication:
     - Manager Round: Communication/Manger_Round.md
