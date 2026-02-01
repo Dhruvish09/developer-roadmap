@@ -222,7 +222,7 @@ nav:
     - AWS:
       - Overview: Devops/AWS/overview.md
       - Services: 
-        - Cloud_computing: Devops/AWS/Services/cloud_computing.md
+        - Cloud_computing: Devops/AWS/Services/Cloud_computing.md
         - IAM: Devops/AWS/Services/IAM.md
         - Virtualization: Devops/AWS/Services/Virtualization.md
       - Deploy Application: 
