@@ -221,6 +221,15 @@ nav:
       - Kubernetes: Devops/Docker/kubernetes.md
     - AWS:
       - Overview: Devops/AWS/overview.md
+      - Services: 
+        - Cloud_computing: Devops/AWS/Services/cloud_computing.md
+        - IAM: Devops/AWS/Services/IAM.md
+        - Virtualization: Devops/AWS/Services/Virtualization.md
+      - Deploy Application: 
+        - EC2: 
+          - EC2 Github Action: Devops/AWS/Deploy_Application/EC2/EC2_github_action.md
+          - EC2 Docker: Devops/AWS/Deploy_Application/EC2/Docker_EC2.md
+
     - Metrices: Devops/monitoring_observability.md
 
   # - Roadmap:
