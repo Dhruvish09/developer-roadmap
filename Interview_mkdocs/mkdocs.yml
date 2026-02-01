@@ -180,6 +180,7 @@ nav:
           - Commands: Interview/Practical/SQL/commands.md
           - practical: Interview/Practical/SQL/sql_practical.md
           - oral: Interview/Practical/SQL/sql_questions.md
+          - SQL List: Interview/Practical/SQL/list_practical.md
     - ORAL_QA:
           - Python: Interview/Oral_Q_A/python.md
           - Sql: Interview/Oral_Q_A/sql.md
