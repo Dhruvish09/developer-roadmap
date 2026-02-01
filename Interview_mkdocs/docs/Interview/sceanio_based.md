@@ -487,3 +487,74 @@ tracemalloc.stop()
 * Serve static or semi-static data via **CDN** or prefetch in the frontend
 
 ---
+
+## 19. What is the N+1 query problem? How did you fix it in your project?
+
+## ✅ What is the N+1 Query Problem?
+
+> **N+1 problem** happens when the app runs
+> **1 query to get a list**, and then
+> **N more queries** to get related data for each item.
+
+So instead of **1 query**, the database gets hit **many times**.
+
+---
+
+## ❌ Example
+
+```python
+orders = Order.objects.all()
+for order in orders:
+    print(order.user.name)
+```
+
+👉 If there are 10 orders → **11 queries**.
+
+---
+
+## ✅ How I Fixed It in My Project
+
+> “I fixed it by fetching related data in advance using `select_related` or `prefetch_related`.”
+
+```python
+orders = Order.objects.select_related('user')
+```
+
+## 20. Two users update the same record at the same time. What problems occur and how do you handle it?
+
+> **One user’s change can overwrite the other user’s change.**
+
+So:
+
+* Data becomes **wrong**
+* You may **lose updates**
+
+This is called a **race condition**.
+
+---
+
+## ✅ How do we handle it?
+
+### 1️⃣ Optimistic Locking (most common)
+
+> “Before updating, I check if someone else already changed the data.”
+
+* Use `version` or `updated_at`
+* If it changed → reject and ask user to retry
+
+👍 Fast and safe.
+
+---
+
+### 2️⃣ Pessimistic Locking
+
+> “I lock the record so only one person can edit at a time.”
+
+* Others must wait
+* Used for **payments / inventory**
+
+---
+
+## 🎯 Very Short Interview Answer
+
+> “When two users update the same record, one update can overwrite the other. I handle this using optimistic locking with a version check, and for critical cases, I use database locks.”
