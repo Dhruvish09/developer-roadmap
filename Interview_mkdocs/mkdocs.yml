@@ -229,6 +229,7 @@ nav:
         - EC2: 
           - EC2 Github Action: Devops/AWS/Deploy_Application/EC2/EC2_github_action.md
           - EC2 Docker: Devops/AWS/Deploy_Application/EC2/Docker_EC2.md
+          - EC2 Docker Compose: Devops/AWS/Deploy_Application/EC2/Docker_Compose_EC2.md
 
     - Metrices: Devops/monitoring_observability.md
 
