@@ -558,3 +558,100 @@ This is called a **race condition**.
 ## 🎯 Very Short Interview Answer
 
 > “When two users update the same record, one update can overwrite the other. I handle this using optimistic locking with a version check, and for critical cases, I use database locks.”
+
+
+vGot you 👍
+Here is the **cleanest, easiest, no-noise version** — something you can **remember + say in interviews**.
+
+---
+
+## 21. How to take database Backup?
+
+## 1️⃣ Custom DB in **Docker (EC2)**
+
+**Steps:**
+
+1. Take DB dump from container
+2. Save it on EC2 host
+3. Upload to S3
+4. Automate daily
+
+**Example (MySQL):**
+
+```bash
+docker exec mysql mysqldump -u root -p db > backup.sql
+aws s3 cp backup.sql s3://db-backup-bucket/
+```
+
+✅ Done
+
+---
+
+## 2️⃣ **AWS RDS** (MySQL / PostgreSQL)
+
+**Steps:**
+
+1. Enable **Automated Backups**
+2. Set retention (7–35 days)
+3. Take manual snapshot before releases
+
+✅ AWS handles backup & restore
+
+---
+
+## 3️⃣ **AWS DynamoDB**
+
+**Steps:**
+
+1. Enable **Point-in-Time Recovery (PITR)**
+2. Take on-demand backup if needed
+
+✅ Fully managed, no scripts
+
+---
+
+## 🎯 ONE-LINE INTERVIEW ANSWER
+
+> For custom databases, I take dumps and store them in S3 with automation. For AWS RDS and DynamoDB, I rely on managed backups like automated backups, snapshots, and point-in-time recovery.
+
+---
+
+## 22. What happend when EC2 Instance is crash?
+```
+User
+  ↓
+Application Load Balancer (ALB)
+  ↓
+EC2 Instances (Auto Scaling Group)
+  ↓
+EC2 Crash / Unhealthy
+  ↓
+Health Check Fails
+  ↓
+Auto Scaling Terminates EC2
+  ↓
+Auto Scaling Launches New EC2
+  ↓
+Application Starts
+  ↓
+Connects to RDS & S3
+  ↓
+Traffic Continues (Minimal Downtime)
+```
+
+---
+
+## Why no data loss?
+
+* Database is in **RDS**
+* Files are in **S3**
+* EC2 is **stateless**
+* So EC2 can be replaced anytime
+
+---
+
+## One-line explanation (to speak with this flow)
+
+> “User traffic goes to ALB, then to EC2 in an Auto Scaling Group. If an EC2 crashes, health checks fail, Auto Scaling replaces it, the app reconnects to RDS and S3, and traffic continues.”
+
+---
