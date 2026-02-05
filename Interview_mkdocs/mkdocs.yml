@@ -176,6 +176,7 @@ nav:
           - Practical: Interview/Practical/Data_type/String/string_practical.md
         - Dictionary:
           - Methods: Interview/Practical/Data_type/Dict/methods.md
+        - Interview Checklist: Interview/Practical/Data_type/Daily_Interview_Checklist.md
       - SQL:
           - Commands: Interview/Practical/SQL/commands.md
           - practical: Interview/Practical/SQL/sql_practical.md
