@@ -108,3 +108,87 @@
 68. Find employees under same manager
 69. Idempotent insert for users
 70. Lock rows while processing payment
+
+
+
+# **✅ Most Asked SQL Practical Problems (Interview-Focused)**
+
+### **Users & Addresses**
+
+| Problem                                        | Tables                                             | Description / Input                   | Expected Output                          |
+| ---------------------------------------------- | -------------------------------------------------- | ------------------------------------- | ---------------------------------------- |
+| Find all users with their addresses            | `users, addresses`                                 | Join users and addresses by `user_id` | `user_id, name, address_line, city, zip` |
+| Find users without addresses                   | `users, addresses`                                 | Left join to find NULL addresses      | Users who don’t have an address          |
+| Users with multiple shipping addresses         | `users, addresses`                                 | Group by `user_id` count>1            | `user_id, address_count`                 |
+| Users who never placed an order                | `users, orders`                                    | Left join orders NULL                 | `user_id, name`                          |
+| Users who purchased all products in a category | `users, orders, order_items, products, categories` | Set division problem                  | `user_id, category_name`                 |
+| Users who spent more than average spending     | `users, orders, order_items, products`             | Calculate avg spending → filter       | `user_id, total_spent`                   |
+| Users who ordered in last 30 days              | `users, orders`                                    | Filter order_date                     | `user_id, order_id`                      |
+| Users with repeated purchases of same product  | `users, orders, order_items`                       | Count>1 per product per user          | `user_id, product_id, purchase_count`    |
+
+---
+
+### **Orders & Order_Items**
+
+| Problem                                                    | Tables                                      | Description / Input                                   | Expected Output                 |
+| ---------------------------------------------------------- | ------------------------------------------- | ----------------------------------------------------- | ------------------------------- |
+| Count number of orders per user                            | `users, orders`                             | Group by `user_id`                                    | `user_id, total_orders`         |
+| Total amount spent by each user                            | `users, orders, order_items, products`      | Sum of `order_items.quantity*products.price` per user | `user_id, total_spent`          |
+| Orders without payments                                    | `orders, payments`                          | Left join `payments` NULL                             | `order_id, user_id`             |
+| Orders with multiple products                              | `orders, order_items`                       | Count products per order > 1                          | `order_id, product_count`       |
+| Orders with only one product                               | `orders, order_items`                       | Count items=1                                         | `order_id, user_id`             |
+| Most recent order per user                                 | `orders`                                    | Max(order_date) group by user                         | `user_id, order_id, order_date` |
+| Orders where shipping address differs from billing address | `orders, addresses`                         | Compare addresses                                     | `order_id, user_id`             |
+| Subtotal / total per order                                 | `orders, order_items, products`             | Sum(quantity*price) per order                         | `order_id, total_amount`        |
+| Orders containing a specific category                      | `orders, order_items, products, categories` | Filter by `category_id`                               | `order_id, user_id`             |
+| Orders including most expensive product                    | `orders, order_items, products`             | Filter product with max(price)                        | `order_id, product_id`          |
+| Total orders per day                                       | `orders`                                    | Group by order_date                                   | `order_date, total_orders`      |
+| Average products per order                                 | `orders, order_items`                       | Avg(count items per order)                            | `avg_items_per_order`           |
+| Total revenue per day                                      | `orders, order_items, products`             | Sum(quantity*price) per day                           | `order_date, total_revenue`     |
+| Monthly sales trend                                        | `orders, order_items, products`             | Group by month                                        | `month, total_sales`            |
+| Running total per day / order                              | `orders, order_items, products`             | Cumulative sum of revenue                             | `order_date, cumulative_total`  |
+| Orders with partial payments                               | `orders, payments`                          | Order total > sum(payment.amount)                     | `order_id, amount_due`          |
+
+---
+
+### **Products & Categories**
+
+| Problem                                 | Tables                                      | Description / Input           | Expected Output                          |
+| --------------------------------------- | ------------------------------------------- | ----------------------------- | ---------------------------------------- |
+| Top 5 products by sales                 | `products, order_items`                     | Sum quantity sold per product | `product_id, total_quantity_sold`        |
+| Products never ordered                  | `products, order_items`                     | Left join `order_items` NULL  | `product_id, name`                       |
+| Most expensive product in each category | `categories, products`                      | Max price per category        | `category_name, product_name, max_price` |
+| Total sales per category                | `categories, products, order_items`         | Join → sum sales              | `category_name, total_sales`             |
+| Top selling category per month          | `categories, products, order_items, orders` | Group by month+category       | `month, category_name, total_sales`      |
+| Products with price > avg price         | `products`                                  | Filter                        | `product_id, name, price`                |
+| Pivot / string aggregation by category  | `categories, products`                      | List products per category    | `category_name, product_list`            |
+
+---
+
+### **Employees & Departments**
+
+| Problem                                     | Tables                   | Description / Input              | Expected Output                            |
+| ------------------------------------------- | ------------------------ | -------------------------------- | ------------------------------------------ |
+| Employees in each department                | `employees, departments` | Group by dept                    | `department_id, employee_count`            |
+| Employee with highest salary per department | `employees`              | Partition by dept                | `department_id, employee_name, max_salary` |
+| Employees with salary above dept average    | `employees`              | Partition by dept                | `employee_id, name, salary`                |
+| Employees with no manager                   | `employees`              | `manager_id IS NULL`             | `employee_id, name`                        |
+| Employees reporting to a manager            | `employees`              | `manager_id=101`                 | `employee_id, name`                        |
+| Departments with more than N employees      | `employees, departments` | Group by dept having count>5     | `department_id, employee_count`            |
+| Second highest salary employee              | `employees`              | Using `RANK()` or `ROW_NUMBER()` | `employee_id, name, salary`                |
+
+---
+
+### **Miscellaneous / Combined Queries**
+
+| Problem                                      | Tables                                             | Description / Input              | Expected Output                  |
+| -------------------------------------------- | -------------------------------------------------- | -------------------------------- | -------------------------------- |
+| Users who ordered all products in a category | `users, orders, order_items, products, categories` | Set division                     | `user_id, category_name`         |
+| Identify inactive customers                  | `users, orders`                                    | Last order > 6 months ago        | `user_id, last_order_date`       |
+| Find missing numbers (e.g., order_id gaps)   | `orders`                                           | Identify missing consecutive IDs | `missing_order_id`               |
+| Find overlapping intervals (bookings/orders) | `orders(start_date,end_date)`                      | Overlapping date ranges          | `order_id1, order_id2`           |
+| Top N users by total spending                | `users, orders, order_items, products`             | Sum spending → top N             | `user_id, total_spent`           |
+| Average order value per user                 | `users, orders, order_items, products`             | Sum per order → avg per user     | `user_id, avg_order_value`       |
+| Running total of revenue                     | `orders, order_items, products`                    | Cumulative sum                   | `order_date, cumulative_revenue` |
+
+---
