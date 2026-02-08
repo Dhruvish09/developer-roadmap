@@ -1,0 +1,26 @@
+/* Custom Header Style */
+.md-header {
+    background-color: var(--md-primary); /* Primary color for the header */
+}
+
+.md-header .md-header__title {
+    color: white; /* Text color for the header title */
+}
+
+.md-header .md-header__logo img {
+    max-height: 50px; /* Adjust logo height if necessary */
+}
+
+/* Custom Footer Style */
+.md-footer {
+    background-color: var(--md-accent); /* Accent color for the footer */
+    color: white; /* Text color for the footer */
+}
+
+.md-footer a {
+    color: white; /* Link color in the footer */
+}
+
+.md-footer .md-footer__copyright {
+    color: white; /* Copyright text color */
+}
